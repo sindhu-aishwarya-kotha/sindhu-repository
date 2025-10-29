@@ -5,12 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Removed @theme inline for compatibility with current tooling */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,4 +18,217 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fashion editorial theme helpers */
+.editorial-bg {
+  background-image: url('/fashion-bg.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Optional full-photo background. Place public/vogue-collection.jpg to enable */
+.editorial-photo-bg {
+  background-image: url('/vogue-collection.jpg') !important;
+  background-size: cover;
+  background-position: center;
+}
+
+.advent-bg {
+  background-image: url('/advent-bg.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bags-bg {
+  background-image: url('/bags-bg.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Christmas visuals */
+.christmas-bg { background-image: url('/christmas-bg.svg'); background-size: cover; background-position: center; }
+.snow-layer { pointer-events: none; position: fixed; inset: 0; overflow: hidden; z-index: 5; }
+.snowflake { position: absolute; top: -10px; width: 6px; height: 6px; background: white; border-radius: 50%; opacity: 0.9; animation: snowfall linear infinite; }
+@keyframes snowfall { 0% { transform: translateY(-10px) translateX(0); } 100% { transform: translateY(110vh) translateX(40px); } }
+.santa-sleigh { position: fixed; top: 40px; left: -300px; width: 260px; height: auto; z-index: 50; }
+.santa-run { animation: santa-fly 6s ease-in-out 1; }
+@keyframes santa-fly { 0% { transform: translateX(-320px) translateY(0) scale(0.95); opacity: 0; } 10% { opacity: 1; } 50% { transform: translateX(60vw) translateY(-20px) scale(1); } 100% { transform: translateX(110vw) translateY(0) scale(0.95); opacity: 0.4; } }
+
+/* Floating chat panel */
+.panel-float {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+/* Gradient edge colors for the floating panel */
+.edge-gradient { position: relative; }
+.edge-gradient::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #e11d48, #f59e0b, #22c55e, #3b82f6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Red holiday background for page */
+.bg-red-holiday {
+  background: linear-gradient(180deg, #7a0b1a 0%, #8c0f1e 40%, #5a0813 100%);
+}
+
+/* Chat panel with Christmas tree background */
+.chat-panel-xmastree {
+  background-image: url('/christmas-bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+/* Send button holiday color */
+.send-red {
+  background: #b90e2a;
+  border-color: rgba(255,255,255,0.25);
+  color: #fff;
+}
+.send-red:hover { background: #9e0c24; }
+
+.glass-panel {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+
+.chip {
+  padding: 8px 12px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+  white-space: nowrap;
+}
+
+.mag-title {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mag-serif {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Trend list styles */
+.trend-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+/* Ralph Lauren-inspired theme helpers */
+.rl-bg {
+  background: radial-gradient(1200px 800px at 50% -10%, #0c1630 0%, #0a1430 45%, #081027 100%);
+}
+.rl-panel {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(218, 165, 32, 0.28);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+.rl-button {
+  background: #0a1430;
+  color: #fff;
+  border: 1px solid rgba(218, 165, 32, 0.5);
+}
+.rl-button:hover { background: #0c1838; }
+.rl-accent { color: #d7b56d; }
+
+/* Readability-focused chat message styles */
+.msg {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+.msg-user {
+  margin-left: auto;
+  background: #0c1838;
+  color: #ffffff;
+  border: 1px solid rgba(215,181,109,0.35);
+}
+.msg-assistant {
+  margin-right: auto;
+  background: #ffffff;
+  color: #0b0b0f;
+  border: 1px solid rgba(12,24,56,0.08);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+}
+
+/* Bag button with opening animation when sending */
+.bag-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.bag-icon {
+  width: 18px;
+  height: 18px;
+}
+.bag-lid {
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  width: 12px;
+  height: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background: #d7b56d;
+  transform-origin: left bottom;
+  transform: rotate(0deg);
+  opacity: 0;
+}
+.sending .bag-lid {
+  opacity: 1;
+  animation: bag-open 0.6s ease-in-out infinite alternate;
+}
+@keyframes bag-open {
+  0% { transform: rotate(0deg) translateY(0); }
+  100% { transform: rotate(-35deg) translateY(-2px); }
+}
+.trend-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.22);
+}
+.trend-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  color: #0b0b0f;
+  background: linear-gradient(135deg, #ff2f87, #ffd34d);
+}
+.trend-action {
+  padding: 6px 10px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
 }

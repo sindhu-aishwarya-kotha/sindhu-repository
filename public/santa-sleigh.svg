@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120">
+  <defs>
+    <linearGradient id="santa" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M2 98c22 10 46 10 70 0"/>
+    <path d="M80 98c22 10 46 10 70 0"/>
+    <path d="M158 98c22 10 46 10 70 0"/>
+  </g>
+  <g>
+    <path d="M110 70c20 0 40-8 46-18 2-3 7-2 7 2 0 20-18 30-44 30-6 0-11-1-15-3-3-2-2-7 2-7h4z" fill="url(#santa)" stroke="#7f1d1d" stroke-width="2"/>
+    <circle cx="146" cy="36" r="14" fill="#fff" stroke="#e11d48" stroke-width="2"/>
+    <circle cx="142" cy="34" r="3" fill="#111"/>
+    <rect x="122" y="52" width="28" height="8" rx="4" fill="#111827" opacity="0.5"/>
+  </g>
+  <g stroke="#a16207" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M198 64c18-8 36-8 54 0"/>
+    <path d="M256 64c18-8 36-8 54 0"/>
+  </g>
+  <g fill="#d97706">
+    <circle cx="198" cy="64" r="4"/>
+    <circle cx="226" cy="64" r="4"/>
+    <circle cx="256" cy="64" r="4"/>
+    <circle cx="284" cy="64" r="4"/>
+  </g>
+</svg>
+
